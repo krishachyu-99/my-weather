@@ -6,13 +6,12 @@ import { WeatherData } from '../models/weather.model';
 
 @Injectable({ providedIn: 'root' })
 export class WeatherService {
-  private apiKey = 'YOUR_API_KEY_HERE';  // Replace with real key
-  private apiURL = 'https://api.openweathermap.org/data/2.5/weather';
+  private apiKey = '284985f3c8b4f94f50d9e01c0c617bbf';
+  private apiURL = 'https://api.openweathermap.org/data/3.0/onecall';
 
   constructor(private http: HttpClient) {}
 
   fetchWeather(city: string): Observable<WeatherData> {
-    // Real implementation:
     return this.http.get<any>(`${this.apiURL}?q=${city}&units=metric&appid=${this.apiKey}`)
       .pipe(
         map(res => ({
@@ -28,7 +27,6 @@ export class WeatherService {
       );
   }
 
-  // Optional mock for dev/test:
   mockFetch(city: string): Observable<WeatherData> {
     const mock: WeatherData = {
       temperature: 18,
