@@ -7,6 +7,8 @@ import { CitySearch } from './components/city-search/city-search';
 import { WeatherDisplay } from './components/weather-display/weather-display';
 import { HistoryList } from './components/history-list/history-list';
 import { ThemeToggle } from './components/theme-toggle/theme-toggle';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { ThemeToggle } from './components/theme-toggle/theme-toggle';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [

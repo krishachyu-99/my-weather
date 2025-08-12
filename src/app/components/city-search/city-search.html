@@ -1,1 +1,7 @@
-<p>city-search works!</p>
+
+<div class="search-container">
+  <input [formControl]="cityControl" placeholder="Enter city" />
+  <button (click)="onSearch()">Search</button>
+</div>
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="error" class="error">{{ error }}</div>

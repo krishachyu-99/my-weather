@@ -1,1 +1,10 @@
-<p>weather-display works!</p>
+
+<ng-container *ngIf="weather$ | async as w">
+  <div class="weather-card">
+    <div>Temp: {{ w.temperature }}°C</div>
+    <div>Condition: {{ w.condition }}</div>
+    <div>Wind: {{ w.windSpeed }} m/s</div>
+    <div>Humidity: {{ w.humidity }}%</div>
+    <div class="suggestion">{{ getSuggestion(w) }}</div>
+  </div>
+</ng-container>
